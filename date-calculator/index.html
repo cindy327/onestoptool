@@ -1,1 +1,401 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>날짜 계산기·D-day 계산기 | 원스톱 툴</title><meta name="description" content="두 날짜 사이의 일수, 주수, D-day를 무료로 계산하세요."><link rel="canonical" href="https://onestoptool.kr/date-calculator/"><meta property="og:title" content="날짜 계산기·D-day 계산기 | 원스톱 툴"><meta property="og:description" content="두 날짜 사이의 일수, 주수, D-day를 무료로 계산하세요."><meta property="og:type" content="website"><meta property="og:url" content="https://onestoptool.kr/date-calculator/"><meta name="robots" content="index,follow"><link rel="stylesheet" href="/assets/css/style.css"><!-- AdSense 승인 후 아래 주석을 제거하고 ca-pub 값을 본인 것으로 교체하세요. <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script> --></head><body><header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span>원스톱</span> 툴</a><nav class="nav"><a href="/work-time/">근무시간</a><a href="/date-calculator/">날짜·D-day</a><a href="/image-compressor/">이미지 압축</a><a href="/about.html">소개</a></nav></div></header><main><section class="tool-hero"><div class="container"><div class="breadcrumb"><a href="/">홈</a> › 날짜·D-day 계산기</div><h1>날짜·D-day 계산기</h1><p class="lead">시작일과 목표일을 선택하면 두 날짜 사이의 일수와 주수, D-day를 계산합니다.</p></div></section><section class="section"><div class="container tool-layout"><div><div class="tool-panel"><form id="dateForm"><div class="form-grid"><div class="field"><label>시작일</label><input id="startDate" type="date" required></div><div class="field"><label>목표일</label><input id="targetDate" type="date" required></div></div><div class="actions"><button class="btn" type="submit">날짜 계산하기</button></div></form><div class="result" id="dateResult"><strong class="big" id="dday"></strong><div class="kpi-grid"><div class="kpi"><small>날짜 차이</small><strong id="dayDiff"></strong></div><div class="kpi"><small>주 + 일</small><strong id="weekDiff"></strong></div></div></div></div><div class="content-card"><div class="ad-slot">AdSense 광고 영역</div></div><div class="content-card prose"><h2>날짜 계산기는 언제 유용할까요?</h2><p>시험, 여행, 프로젝트 마감일, 기념일처럼 특정 날짜까지 남은 기간이나 두 날짜 사이의 정확한 일수를 빠르게 확인할 때 사용할 수 있습니다.</p></div></div><aside class="sidebar"><div class="ad-slot">사이드 광고 영역</div></aside></div></section></main><footer class="footer"><div class="container footer-grid"><div><strong>원스톱 툴</strong><p class="small">계산·이미지·문서 작업을 빠르게 처리하는 무료 웹 도구 모음입니다.</p><p class="small">© <span data-year></span> OneStopTool. All rights reserved.</p></div><div class="footer-links"><a href="/about.html">사이트 소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의</a></div></div></footer><script src="/assets/js/common.js"></script><script src="/assets/js/date-calculator.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+
+<title>
+날짜 계산기·D-day 계산기 | 원스톱 툴
+</title>
+
+<meta name="description"
+      content="두 날짜 사이의 일수, 주수, D-day를 무료로 계산하세요.">
+
+<link rel="canonical"
+      href="https://onestoptool.kr/date-calculator/">
+
+<meta property="og:title"
+      content="날짜 계산기·D-day 계산기 | 원스톱 툴">
+
+<meta property="og:description"
+      content="두 날짜 사이의 일수, 주수, D-day를 무료로 계산하세요.">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:url"
+      content="https://onestoptool.kr/date-calculator/">
+
+<meta name="robots"
+      content="index,follow">
+
+
+<link rel="stylesheet"
+      href="../assets/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+
+<a class="brand"
+   href="../">
+
+<span>원스톱</span> 툴
+
+</a>
+
+
+<nav class="nav">
+
+<a href="../work-time/">
+근무시간
+</a>
+
+<a href="../date-calculator/">
+날짜·D-day
+</a>
+
+<a href="../image-compressor/">
+이미지 압축
+</a>
+
+<a href="../about.html">
+소개
+</a>
+
+</nav>
+
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="tool-hero">
+
+
+<div class="container">
+
+
+<div class="breadcrumb">
+
+<a href="../">
+홈
+</a>
+
+› 날짜·D-day 계산기
+
+</div>
+
+
+<h1>
+날짜·D-day 계산기
+</h1>
+
+
+<p class="lead">
+
+시작일과 목표일을 선택하면
+두 날짜 사이의 일수와 주수,
+D-day를 계산합니다.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="section">
+
+
+<div class="container tool-layout">
+
+
+<div>
+
+
+<div class="tool-panel">
+
+
+<form id="dateForm">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label for="startDate">
+시작일
+</label>
+
+<input
+id="startDate"
+type="date"
+required>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="targetDate">
+목표일
+</label>
+
+<input
+id="targetDate"
+type="date"
+required>
+
+</div>
+
+
+</div>
+
+
+
+<div class="actions">
+
+<button class="btn"
+        type="submit">
+
+날짜 계산하기
+
+</button>
+
+</div>
+
+
+</form>
+
+
+
+<div class="result"
+     id="dateResult">
+
+
+<strong
+class="big"
+id="dday">
+</strong>
+
+
+<div class="kpi-grid">
+
+
+<div class="kpi">
+
+<small>
+날짜 차이
+</small>
+
+<strong id="dayDiff">
+</strong>
+
+</div>
+
+
+
+<div class="kpi">
+
+<small>
+주 + 일
+</small>
+
+<strong id="weekDiff">
+</strong>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-card">
+
+<div class="ad-slot">
+AdSense 광고 영역
+</div>
+
+</div>
+
+
+
+<div class="content-card prose">
+
+
+<h2>
+날짜 계산기는 언제 유용할까요?
+</h2>
+
+
+<p>
+
+시험, 여행, 프로젝트 마감일,
+기념일처럼 특정 날짜까지 남은 기간이나
+
+두 날짜 사이의 정확한 일수를
+빠르게 확인할 때 사용할 수 있습니다.
+
+</p>
+
+
+<h3>
+D-day 표시 방법
+</h3>
+
+
+<p>
+
+목표일이 미래라면 D-숫자,
+이미 지난 날짜라면 D+숫자로 표시됩니다.
+
+같은 날짜라면 D-Day로 표시됩니다.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<aside class="sidebar">
+
+
+<div class="ad-slot">
+사이드 광고 영역
+</div>
+
+
+<div class="content-card">
+
+<h3>
+다른 무료 도구
+</h3>
+
+<p>
+<a href="../work-time/">
+근무시간 계산기 →
+</a>
+</p>
+
+<p>
+<a href="../image-compressor/">
+이미지 용량 줄이기 →
+</a>
+</p>
+
+</div>
+
+
+</aside>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<footer class="footer">
+
+
+<div class="container footer-grid">
+
+
+<div>
+
+<strong>
+원스톱 툴
+</strong>
+
+
+<p class="small">
+
+계산·이미지·문서 작업을 빠르게 처리하는
+무료 웹 도구 모음입니다.
+
+</p>
+
+
+<p class="small">
+
+© <span data-year></span>
+OneStopTool.
+All rights reserved.
+
+</p>
+
+
+</div>
+
+
+
+<div class="footer-links">
+
+<a href="../about.html">
+사이트 소개
+</a>
+
+<a href="../privacy.html">
+개인정보처리방침
+</a>
+
+<a href="../terms.html">
+이용약관
+</a>
+
+<a href="../contact.html">
+문의
+</a>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<script src="../assets/js/common.js"></script>
+
+<script src="../assets/js/date-calculator.js"></script>
+
+
+</body>
+</html>
